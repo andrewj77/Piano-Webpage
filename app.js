@@ -1,4 +1,31 @@
-var audio = new Audio('tracks/background.mp3');
+const audio = new Audio('tracks/background.mp3');
+const somebodyToLove = new Audio('tracks/somebody_to_love.mp3');
+const moonlightSonata = new Audio('tracks/m_sonata.mp3');
+const furElise = new Audio('tracks/fur_elise.mp3');
+const riverFlowsInYou = new Audio('tracks/river_flows.mp3');
+const solfeggietto = new Audio('tracks/solfeggietto.mp3');
+const balladePourAdeline = new Audio('tracks/adeline.mp3');
+const nuvoleBianche = new Audio('tracks/nuvole_bianche.mp3');
+const preludeInEMinor = new Audio('tracks/prelude_chopin.mp3');
+const rondoAllaTurca = new Audio('tracks/alla_turca.mp3');
+const hesAPirate = new Audio('tracks/caribbean.mp3');
+const divenire = new Audio('tracks/divenire.mp3');
+const comptineDunAutreEte = new Audio('tracks/autre_ete.mp3');
+
+let map = new Map([
+    ['queen', somebodyToLove],
+    ['sonata', moonlightSonata],
+    ['furelise', furElise],
+    ['rivers', riverFlowsInYou],
+    ['solfeggietto', solfeggietto],
+    ['ballade', balladePourAdeline],
+    ['nuvole', nuvoleBianche],
+    ['prelude', preludeInEMinor],
+    ['turca', rondoAllaTurca],
+    ['pirate', hesAPirate],
+    ['divenire', divenire],
+    ['autreete', comptineDunAutreEte]
+]);
 
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
@@ -24,7 +51,7 @@ const highlightMenu = () => {
     const allMenus = [aboutMenu, introductionMenu, whyPianoMenu, choiceMenu,
     repertoireMenu, contactMenu];
     let scrollPos = window.scrollY;
-    console.log(scrollPos);
+    // console.log(scrollPos);
 
     //adds highlight class to menu items
     if(window.innerWidth > 960 && scrollPos < 600) {
@@ -121,3 +148,34 @@ const highlightSocial = () => {
 
 hitButton = document.getElementById('hit');
 hitButton.addEventListener('click', highlightSocial);
+
+let nowPlaying = false;
+let nowPlayingSongName = '';
+
+function playSpecificSong(name) {
+    let song = map.get(name);
+    console.log(nowPlaying);
+    console.log(nowPlayingSongName);
+    if(!nowPlaying) {
+        if(playing) {
+        audio.pause();
+        }
+        song.play();
+        nowPlaying = true;
+        nowPlayingSongName = name;
+    }
+    else {
+        playingSong = map.get(nowPlayingSongName);
+        playingSong.pause();
+        if(name !== nowPlayingSongName) {
+            song.play();
+            nowPlayingSongName = name;
+        }
+        else {
+            nowPlaying = false;
+            if(playing) {
+            audio.play();
+            }
+        }
+    }
+}

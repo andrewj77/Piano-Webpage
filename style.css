@@ -592,6 +592,36 @@ rgba(149,142,166,1) 100%);
   background: linear-gradient(to bottom, #ff0080, #ff8c00, #40e0d0);
 }
 
+.repertoire__card:nth-child(4) {
+  background: #b92b27;  
+  background: -webkit-linear-gradient(to right, #1565C0, #b92b27);
+  background: linear-gradient(to right, #1565C0, #b92b27);
+}
+
+.repertoire__card:nth-child(5) {
+  background: #544a7d; 
+  background: -webkit-linear-gradient(to right, #ffd452, #544a7d);
+  background: linear-gradient(to right, #ffd452, #544a7d);
+}
+
+.repertoire__card:nth-child(6) {
+  background: #1E9600; 
+  background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);
+  background: linear-gradient(to right, #FF0000, #FFF200, #1E9600);
+}
+
+.repertoire__card:nth-child(7) {
+  background: #59C173;
+  background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173); 
+  background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173);
+}
+
+.repertoire__card:nth-child(8) {
+  background: #333333;
+  background: -webkit-linear-gradient(to right, #dd1818, #333333);
+  background: linear-gradient(to right, #dd1818, #333333);
+}
+
 .repertoire__card h2 {
   text-align: center;
 }
